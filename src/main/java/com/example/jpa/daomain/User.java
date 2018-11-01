@@ -2,6 +2,7 @@ package com.example.jpa.daomain;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * 用户实体定义
@@ -11,7 +12,7 @@ import java.io.Serializable;
  * @date 2018/10/9 14:42
  */
 @Entity
-@Table(name = "USER")
+@Table(name = "USER2")
 public class User implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,6 +26,13 @@ public class User implements Serializable{
 
     @Column
     private String address;
+
+//    @Column
+//    private Long bookid;
+//
+//    @OneToMany
+//    @JoinColumn(name = "bookid")
+//    private List<Book> books;
 
     public Long getId() {
         return id;
@@ -57,6 +65,22 @@ public class User implements Serializable{
     public void setAddress(String address) {
         this.address = address;
     }
+
+//    public Long getBookid() {
+//        return bookid;
+//    }
+//
+//    public void setBookid(Long bookid) {
+//        this.bookid = bookid;
+//    }
+//
+//    public List<Book> getBooks() {
+//        return books;
+//    }
+//
+//    public void setBooks(List<Book> books) {
+//        this.books = books;
+//    }
 
     @Override
     public String toString() {

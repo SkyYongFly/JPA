@@ -2,17 +2,19 @@ spring:
   application:
     name: spring-data-jpa-demo
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/example
-    username: root
+#    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: oracle.jdbc.OracleDriver
+#    url: jdbc:mysql://localhost:3306/example
+    url: jdbc:oracle:thin:@127.0.0.1:1521/orcl
+    username: scott
     password: root
   jpa:
     hibernate:
-      #ÉèÖÃ´´½¨±íµÄ»úÖÆ£¬
-      #create Ã¿´ÎÆô¶¯¶¼É¾³ıÔ­ÓĞ±íĞÂ½¨±í£¬
-      #update Èç¹ûÒÑ¾­´æÔÚÔò²»ĞÂ½¨£¬µ«ÊÇÈç¹û±í½á¹¹Óë¶¨ÒåµÄÊµÌå²»Ò»ÖÂÔòĞèÒªĞŞ¸Ä±í½á¹¹
+      #è®¾ç½®åˆ›å»ºè¡¨çš„æœºåˆ¶ï¼Œ
+      #create æ¯æ¬¡å¯åŠ¨éƒ½åˆ é™¤åŸæœ‰è¡¨æ–°å»ºè¡¨ï¼Œ
+      #update å¦‚æœå·²ç»å­˜åœ¨åˆ™ä¸æ–°å»ºï¼Œä½†æ˜¯å¦‚æœè¡¨ç»“æ„ä¸å®šä¹‰çš„å®ä½“ä¸ä¸€è‡´åˆ™éœ€è¦ä¿®æ”¹è¡¨ç»“æ„
       ddl-auto: update
-    #SQL²Ù×÷ÊµÊ±ÏÔÊ¾Ïà¹ØsqlÓï¾ä
+    #SQLæ“ä½œå®æ—¶æ˜¾ç¤ºç›¸å…³sqlè¯­å¥
     show-sql: true
 
 server:
